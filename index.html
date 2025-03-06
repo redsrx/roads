@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="asdffa.css">
+	<meta name="google-site-verification" content="09dObAXNmr2mCBrARf6BYEdF5hJp47XQiyd8GxRppMQ" />
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137727881-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-137727881-1');
+	</script>
+
+	<meta charset='UTF-8'>
+	<title>자동차 전용도로 / 고속화 일반도로 지도</title>
+</head>
+
+<body>
+	<div class='ro'>
+		<div id='map'></div>
+
+		<div class='co'>
+			<div class='c1'>
+				<b>자동차전용도로 목록 : <div style="color:red;">적색</div>
+					이륜차 통행 불가 목록 : <div style="color:purple;">보라색</div></b>
+				<button type="button" onclick=selectMW()>Select All</button>
+				<button type="button" onclick=deselectMW()>Deselect All</button>
+			</div>
+			<div id='motorways' class='wayslist'></div>
+		</div>
+		<div class='co'>
+			<div class='c1'>
+				<b>신호 적은 일반 도로 :
+					<div style="color:#00AFFF;">하늘색</div>
+				</b>
+				<button type="button" onclick=selectWW()>Select All</button>
+				<button type="button" onclick=deselectWW()>Deselect All</button>
+			</div>
+			<div id='wideways' class='wayslist'></div>
+		</div>
+	</div>
+
+	<br>
+	<br> 각 경로에 마우스를 올리면 이름을 볼 수 있습니다.
+	<br> 하늘색 도로들은 신호등 모양이 있는 곳에만 신호가 있습니다.
+	<br>
+	<br>
+	<br> 참고한 곳:
+	<br> <a href='https://www.molit.go.kr/USR/policyData/m_34681/dtl.jsp?id=4632'>2022 도로업무편람</a>
+	<br> <a href='https://m1.juso.go.kr/gismap-new/MapIndex.do'>도로명주소 안내시스템</a>
+	<br> <a href='https://cafe.naver.com/bikecargogo/2923135'>전국지도 고속화도로 교통 안내도 (2차) 2019년 7월 27일 기준 by 바이크 튜닝 매니아 민트옴므님</a>
+	<br>
+	<br>
+	<br>
+	<br> 오류 제보 또는 데이터 추가, 디자인 개선 의견은 redusx@gmail.com 으로 메일 부탁드립니다.
+</body>
+
+<script type='text/javascript' src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=3mc4k7c7xe&submodules=geocoder"></script>
+
+<script src='drawMap.js'></script>
+<script src='drawWay.js'></script>
+<script src='getCoord.js'></script>
+
+<script>
+	initWays(
+		[
+			['motorways', '#F00000', true, motorwayClass, document.getElementById("motorways"), 0, 'solid', 3],
+			['mcbanways', '#800080', true, motorwayClass, document.getElementById("motorways"), 0, 'solid', 3],
+			['wideways', '#00AFFF', true, widewayClass, document.getElementById("wideways"), 20, 'solid', 3],
+		]
+	)
+</script>
+
+</html>
