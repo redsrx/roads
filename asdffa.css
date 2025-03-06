@@ -1,0 +1,63 @@
+*{
+	font-family: sans-serif
+}
+#map{
+	width:50vw;
+	height:50vw;
+}
+#map-full{
+	width:100vw;
+	height:100vw;
+}
+
+.ro	{
+	display: flex;
+}
+.co {
+	/* height:10vw; */
+	flex: 20vw;
+	/* overflow: scroll; */
+}
+
+.c1{
+	height:10vw;
+}
+
+.wayslist{
+	height:40vw;
+	overflow: scroll;
+}
+
+.btn_mylct {
+	z-index: 100;
+	overflow: hidden;
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	left: 5px;
+	width: 34px;
+	height: 34px;
+	border: 1px solid rgba(58, 70, 88, .45);
+	border-radius: 2px;
+	background: #fcfcfd;
+	text-align: center;
+	-webkit-background-clip: padding;
+	background-clip: padding-box
+}
+
+.spr_trff {
+	overflow: hidden;
+	display: inline-block;
+	color: transparent !important;
+	vertical-align: top;
+	background: url(spr_trff_v6.png) 0 0;
+	background-size: 200px 200px;
+	-webkit-background-size: 200px 200px
+}
+
+.spr_ico_mylct {
+	width: 20px;
+	height: 20px;
+	margin: 7px 0 0 0;
+	background-position: -153px -31px
+}
